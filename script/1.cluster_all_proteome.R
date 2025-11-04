@@ -38,13 +38,13 @@ obj <- RunHarmony(obj,
                   reduction = "pca",
                   reduction.save = "harmony",
                   assay.use = "SCT")
-DefaultAssay(obj) <- "SCT"
+DefaultAssay(obj) <- "protein"
 obj <- JoinLayers(obj)
-
 ###############
 ## umap step ##
 ###############
 graphName = c( "SCT_nn","SCT_snn")
+DefaultAssay(obj) <- "SCT"
 clusterName = "protein_cluster"
 reduction =   "umap"
 redu_name = "harmony"
