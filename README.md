@@ -15,7 +15,9 @@ P.S. there will be two step for the proteome umap:
 step 1. To label the blood and brain cells
 
 ``` R
-Rscript 1.cluster_all_proteome.R 1.single_cell_protein_diann_log.csv 1.clean_meta.csv
+Rscript 1.cluster_all_proteome.R \
+        1.single_cell_protein_diann_log.csv \
+        1.clean_meta.csv
 ```
 raw data could be downloaded from the online browser http://xxx 
 
