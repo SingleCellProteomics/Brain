@@ -38,6 +38,7 @@ obj <- RunHarmony(obj,
                   reduction = "pca",
                   reduction.save = "harmony",
                   assay.use = "SCT")
+DefaultAssay(obj) <- "SCT"
 obj <- JoinLayers(obj)
 
 ###############
