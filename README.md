@@ -3,21 +3,24 @@ This repository contains the code and data necessary to reproduce the key findin
 ## Data Resources
 
 *   Essential data files are located in the `data/` directory.
+*   raw data for protein and RNA could be downloaded from the online browser http://xxx
+
 
 ## Analysis Scripts
 
 The `scripts/` directory contains the scripts used for data analysis, clustering, and visualization.
 
-P.S. there will be two step for protein umap: 
+P.S. there will be two step for the proteome umap: 
 
 step 1. To label the blood and brain cells
 
 ``` R
 Rscript 1.cluster_all_proteome.R 1.single_cell_protein_diann_log.csv 1.clean_meta.csv
 ```
-you will get the `all_cell.cluster.qs`
+raw data could be downloaded from the online browser http://xxx 
 
-`1.single_cell_protein_diann_log.csv` and `1.clean_meta.csv` could be downloaded from the online browser http://xxx 
+
+This will output seurat obj in qs format `all_cell.cluster.qs`, which could be load in R through `qs::qread`
 
 
 step 2. re-cluster to get seperated cells cluster  
@@ -25,8 +28,7 @@ step 2. re-cluster to get seperated cells cluster
 ``` R
 Rscript 2.sub_cluster_proteome.R all_cell.cluster.qs
 ```
-then the `brain.cluster.qs` and  the `blood.cluster.qs` will return for visulization.
-which could be load in R through `qs::qread`
+then the seurat objs for barin and blood cells will sperate into `brain.cluster.qs` and  the `blood.cluster.qs` for visulization.
 
 
 ## Interactive Notebook
