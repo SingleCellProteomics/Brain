@@ -25,12 +25,12 @@ raw data could be downloaded from the online browser http://xxx
 This will output seurat obj in qs format `all_cell.cluster.qs`, which could be load in R through `qs::qread`
 
 
-step 2. re-cluster to get seperated cells cluster  
+step 2. re-cluster to get seperated blood and brain clusters
 
 ``` R
 Rscript 2.sub_cluster_proteome.R all_cell.cluster.qs
 ```
-then the seurat objs for barin and blood cells will sperate into `brain.cluster.qs` and  the `blood.cluster.qs` for visulization.
+then the seurat objs for brain and blood cells will sperate into `brain.cluster.qs` and  the `blood.cluster.qs` for visulization.
 
 
 ## Interactive Notebook
