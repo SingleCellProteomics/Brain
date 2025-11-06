@@ -1,18 +1,12 @@
 # including("ORBIT.jl") to load below data and function
 
 pp, #theoretical peptide of protein
-cds, #cds length
-aa_len, #amino acid length
 gravy, # GRAVY_Score
 TM, # TM: TMhelice
 ORBIT = let
 	# theoretical peptide
 	df = CSV.read("data/theoretical_peptide_counts.csv",DataFrame)
 	pp = combine(groupby(df,:Gene), "Theoretical Peptide Count" => maximum => "n_peptide")
-	# cds length
-	cds = CSV.read("data/cds.txt",DataFrame)
-	# protein length
-	aa_len =  CSV.read("data/calculate_aminoacid_result.csv",DataFrame)
 	# gravy
 	df = CSV.read("data/gravy_results.csv",DataFrame)
 	gravy = combine(groupby(df,:Gene), "GRAVY_Score" => maximum => "GRAVY_Score")
@@ -58,5 +52,5 @@ ORBIT = let
 	end
 
 	# export clean data and function
-	pp, cds, aa_len, gravy, TM, ORBIT
+	pp, gravy, TM, ORBIT
 end
