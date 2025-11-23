@@ -2,8 +2,8 @@ This repository contains the code and data necessary to reproduce the key findin
 
 ## Data Resources
 
-*   Essential data files are located in the `data/` directory.
-*   raw data for protein and RNA could be downloaded from the online browser http://xxx
+*   Essential data files are located in the `data/` directory, besides the raw data which have been indicated in the manuscript data availability section
+
 
 
 ## Analysis Scripts
@@ -19,7 +19,6 @@ Rscript 1.cluster_all_proteome.R \
         1.single_cell_protein_diann_log.csv \
         1.clean_meta.csv
 ```
-*raw data availability indicated in the manuscript 
 
 
 This will output seurat obj in qs format `all_cell.cluster.qs`, which could be load in R through `qs::qread`
